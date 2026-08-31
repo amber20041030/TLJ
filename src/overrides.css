@@ -1,0 +1,85 @@
+@import "./features.css";
+.shortcut-section {
+  margin-top: 16px;
+}
+.simple-feature img {
+  display: block;
+  width: 82%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: none;
+  margin: 0 auto;
+}
+.simple-feature b {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+.color-picker {
+  border: 0;
+  padding: 0;
+  margin: 13px 0;
+}
+.color-picker legend {
+  font-size: 11px;
+  font-weight: 700;
+  color: #67522f;
+  margin-bottom: 8px;
+}
+.color-picker button {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin-right: 8px;
+  color: #fff;
+  box-shadow: 0 3px 8px #5b3a182b;
+  display: inline-grid;
+  place-items: center;
+}
+.color-picker button.active {
+  outline: 2px solid #4c3511;
+  outline-offset: 2px;
+}
+.color-picker svg {
+  width: 16px;
+}
+.month-grid button.booked {
+  background: var(--tour-color);
+  border-radius: 0;
+  box-shadow: none;
+}
+.month-grid button.booked.segment-start {
+  border-radius: 12px 0 0 12px;
+  margin-left: 2px;
+}
+.month-grid button.booked.segment-end {
+  border-radius: 0 12px 12px 0;
+  margin-right: 2px;
+}
+.month-grid button.booked.segment-start.segment-end {
+  border-radius: 12px;
+  margin-inline: 2px;
+}
+.month-grid button.booked em {
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+  font-weight: 700;
+}
+.feature.simple-feature > span,
+.feature.simple-feature small {
+  display: none;
+}
+@media (max-width: 360px) {
+  .simple-feature b {
+    font-size: 12px;
+  }
+  .simple-feature img {
+    width: 80%;
+  }
+}
