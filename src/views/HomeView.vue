@@ -11,30 +11,31 @@ import { state } from "../store.js";
 const router = useRouter(),
   drawer = ref(false),
   unread = computed(() => state.chats.reduce((n, c) => n + c.unread, 0)),
+  assetPath = (file) => `${import.meta.env.BASE_URL}${file}`,
   features = [
     {
       label: "個人簡介",
       sub: "建立專業形象",
       path: "/profile",
-      image: "/個人簡介.png",
+      image: assetPath("個人簡介.png"),
     },
     {
       label: "徵才啟事",
       sub: "探索帶團機會",
       path: "/jobs",
-      image: "/徵才啟事.png",
+      image: assetPath("徵才啟事.png"),
     },
     {
       label: "交流討論",
       sub: "分享實務經驗",
       path: "/discussion",
-      image: "/交流討論.png",
+      image: assetPath("交流討論.png"),
     },
     {
       label: "額外收入",
       sub: "拓展合作可能",
       path: "/income",
-      image: "/額外收入.png",
+      image: assetPath("額外收入.png"),
     },
   ];
 </script>
