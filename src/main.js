@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import { createPinia } from "pinia";
 import App from "./App.vue";
 import "./styles.css";
@@ -60,7 +60,9 @@ const routes = [
   { path: "/:pathMatch(.*)*", redirect: "/" },
 ];
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // GitHub Pages does not rewrite nested paths to index.html. Hash history
+  // keeps every public route under /TLJ/ and prevents refresh-time 404 pages.
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes,
 });
 router.beforeEach((to) => {
