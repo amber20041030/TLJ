@@ -28,11 +28,11 @@ npm run build
 
 - `src/views/`：登入、付款、首頁、聊天室及四大功能頁面
 - `src/components/`：Banner、表單、月曆、抽屜、聊天及四大功能共用元件
-- `src/store.js`：集中 Mock Data、localStorage 保存與 Demo 重設
+- `src/store.js`：集中 Mock Data 與 localStorage 保存
 - `src/stores/features.js`：四大功能 Pinia 狀態與本機持久化操作
 - `src/mockFeatures.js`：四大功能集中 Mock Data
 - `src/utils/imageDb.js`：圖片壓縮與 IndexedDB 儲存
 - `imgs/`：首頁四個圓形功能入口圖片；替換同名檔案即可更新
 - `src/styles.css`：全站 Liquid Glass、Mobile First 與安全區樣式
 
-設定抽屜內提供「重設 Demo 資料」。Demo 信用卡可使用 `4242424242424242`、`12/30`、`123`。
+Demo 信用卡可使用 `4242424242424242`、`12/30`、`123`。

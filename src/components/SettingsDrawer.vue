@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive, watch } from "vue";
-import { X, UserRound, RotateCcw, LogOut, Save } from "lucide-vue-next";
-import { state, roleName, formatDate, resetDemo } from "../store.js";
+import { X, UserRound, LogOut, Save } from "lucide-vue-next";
+import { state, roleName, formatDate } from "../store.js";
 import ConfirmDialog from "./ConfirmDialog.vue";
 const props = defineProps({ open: Boolean }),
   emit = defineEmits(["close", "logout"]),
@@ -58,13 +58,6 @@ function logout() {
       <nav v-else>
         <button @click="editing = true">
           <UserRound />基本資料<span>›</span></button
-        ><button
-          @click="
-            resetDemo();
-            $emit('close');
-          "
-        >
-          <RotateCcw />重設 Demo 資料<span>›</span></button
         ><button class="logout" @click="confirm = true">
           <LogOut />登出<span>›</span>
         </button>

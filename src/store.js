@@ -143,8 +143,3 @@ watch(
   { deep: true },
 );
 export const roleName = () => (state.user.role === "leader" ? "領隊" : "導遊");
-export function resetDemo() {
-  Object.keys(state).forEach((k) => delete state[k]);
-  Object.assign(state, structuredClone(defaults));
-  localStorage.removeItem("tourLeaderDemo");
-}
