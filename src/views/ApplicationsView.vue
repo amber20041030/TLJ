@@ -1,11 +1,13 @@
 <script setup>
 import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
 import { BriefcaseBusiness, MessageCircle, XCircle } from "lucide-vue-next";
 import { useFeatureStore } from "../stores/features.js";
 import FeatureHeader from "../components/FeatureHeader.vue";
 import StatusBadge from "../components/StatusBadge.vue";
 import ConfirmDialog from "../components/ConfirmDialog.vue";
 const store = useFeatureStore(),
+  router = useRouter(),
   tab = ref("全部"),
   cancel = ref(null),
   tabs = ["全部", "待回覆", "已查看", "洽談中", "已錄取", "未錄取", "已取消"],
@@ -23,7 +25,7 @@ const store = useFeatureStore(),
       .map((a) => ({ ...a, job: store.jobs.find((j) => j.id === a.jobId) })),
   );
 function chat(a) {
-  location.href = `/chat/${store.ensureChat(a.job.agencyName)}`;
+  router.push(`/chat/${store.ensureChat(a.job.agencyName)}`);
 }
 </script>
 <template>

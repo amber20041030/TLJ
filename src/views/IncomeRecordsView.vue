@@ -1,10 +1,12 @@
 <script setup>
 import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
 import { useFeatureStore } from "../stores/features.js";
 import { ClipboardList, MessageCircle, WalletCards } from "lucide-vue-next";
 import FeatureHeader from "../components/FeatureHeader.vue";
 import StatusBadge from "../components/StatusBadge.vue";
 const store = useFeatureStore(),
+  router = useRouter(),
   tab = ref("全部"),
   tabs = [
     "全部",
@@ -34,7 +36,7 @@ const store = useFeatureStore(),
       })),
   );
 function chat(r) {
-  location.href = `/chat/${store.ensureChat(r.item.partnerName)}`;
+  router.push(`/chat/${store.ensureChat(r.item.partnerName)}`);
 }
 </script>
 <template>

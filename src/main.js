@@ -59,7 +59,10 @@ const routes = [
   { path: "/chat/:id", component: ChatView },
   { path: "/:pathMatch(.*)*", redirect: "/" },
 ];
-const router = createRouter({ history: createWebHistory(), routes });
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes,
+});
 router.beforeEach((to) => {
   if (
     !state.loggedIn &&
